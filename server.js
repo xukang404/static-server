@@ -26,18 +26,20 @@ var server = http.createServer(function (request, response) {
   response.statusCode = 200;
   //    默认首页
   const filePath = path === "/" ? "/index.html" : path;
-  const index = filePath.lastIndexOf('.')
+  const index = filePath.lastIndexOf(".");
   //    suffix 是后缀
-  const suffix = filePath.substring(index)
+  const suffix = filePath.substring(index);
   const fileTypes = {
-      '.html': 'text/html',
-      '.css': 'text/css',
-      '.js': 'text/javascript',
-      '.png': 'text/png',
-      '.jpg': 'text/jpeg'
-  }
-  response.setHeader("Content-Type",
-   `${filePath[suffix] || 'text/html'};charset=utf-8`);
+    ".html": "text/html",
+    ".css": "text/css",
+    ".js": "text/javascript",
+    ".png": "text/png",
+    ".jpg": "text/jpeg",
+  };
+  response.setHeader(
+    "Content-Type",
+    `${fileTypes[suffix] || "text/html"};charset=utf-8`
+  );
 
   let content;
   try {

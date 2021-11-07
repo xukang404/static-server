@@ -1,3 +1,7 @@
-body{
-    color: red;
+body {
+  color: red;
+}
+img {
+  max-width: 500px;
+  max-height: 100%;
 }
